@@ -1,10 +1,8 @@
 # MLOps Playground
 
-Репозиторий: [github.com/dbelogortseva/mlops](https://github.com/dbelogortseva/mlops)
-
 ## Проверка
 
-Команды выполняются из корня репозитория в PowerShell. Требуются `uv`, Docker, `kind` и `kubectl`.
+Требуются `uv`, Docker, `kind` и `kubectl`.
 
 ```powershell
 uv run pytest
