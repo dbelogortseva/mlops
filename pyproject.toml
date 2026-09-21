@@ -1,0 +1,42 @@
+[project]
+name = "mlops-playground"
+version = "1.0.0"
+description = "Daily order prediction service"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "pydantic-settings",
+    "pandas",
+    "numpy",
+    "scikit-learn>=1.6,<1.7",
+    "joblib",
+    "psycopg[binary]",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx",
+    "ruff",
+    "ipykernel",
+    "pyarrow",
+]
+
+[build-system]
+requires = ["uv_build>=0.10,<0.11"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "mlops_playground"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires PostgreSQL at DATABASE_URL"]
+
+[tool.ruff]
+line-length = 150
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
